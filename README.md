@@ -14,9 +14,11 @@ How do we use git to keep track of our work that uses Google Drive?
 
 What if also a pickle file in the folder as well and you want to push that to GitHub? It's a lot of re-downloading on your computer in order to push it onto GitHub.
 
-In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
+In this tutorial, we are going to directly interact with git and GitHub through Google Drive.
 
 ## Goal
+
+In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
 
 In this tutorial, you are going to be doing the following:
 * Getting a Personal Access Token from GitHub
@@ -25,7 +27,7 @@ In this tutorial, you are going to be doing the following:
 * Initializing a local git repository in GitHub.
 * Pushing local git repository from Google Drive to GitHub.
 
-Generally, Terminal or Command Line needs to be used when cloning Github repositories or making a local git repository. In this tutorial, we are going to be opening another Colaboratory notebook within your drive to utilize as your terminal.
+Generally, Terminal or Command Line needs to be used when cloning GitHub repositories or making a local git repository. In this tutorial, we are going to be opening another Colaboratory notebook within your drive to utilize as your terminal.
 
 **Note**: repository is going to be shorten to repo from now on.
 
@@ -35,7 +37,7 @@ The first thing is to get a personal access token from Github. Follow the instru
 
 Remember to treat this access token like you would treat any password.
 
-Colaboratory notebook's terminal won't prompt for a password when interacting with GitHub repos. Thus a personal access token is neccessary.
+Colaboratory notebook's terminal won't prompt for a password when interacting with GitHub repos. Thus a personal access token is neccessary in proving that you have access to the repo through your account.
 
 ## Cloning a Public GitHub Repo
 
@@ -94,7 +96,7 @@ These are the steps to intializing a Google Drive folder into a git repo.
 1. Open another colab notebook outside the folder in question. Name the notebook `terminal.ipynb`
 
 2. Mount the the google drive into the notebook.
-```
+```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
@@ -104,7 +106,7 @@ This will prompt you to authorize to mount your google drive. Make sure you do t
 
 In another cell, put in the following
 
-```
+```bash
 %cd [paste in file path here. Put in quotes if there are spaces in it.]
 ```
 
@@ -112,7 +114,7 @@ Double check that you're in the right repository using `pwd`.
 
 4. Now you're ready to initialize the google folder into the local git repository.
 
-```
+```bash
 !git init
 ```
 
@@ -138,13 +140,13 @@ https://[github-token]@github.com/[User name]/[repository name].git
 
 3. Use the edited HTTPS to create a git remote for the github repo.
 
-```
+```bash
 !git remote add [alias] https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
 Double check that the remote is added with the following.
 
-```
+```bash
 !git remote -v
 ```
 
@@ -152,7 +154,7 @@ Double check that the remote is added with the following.
 
 4. Push your local repo into your github repo.
 
-```
+```bash
 !git push -u [remote alias] [master]
 ```
 
