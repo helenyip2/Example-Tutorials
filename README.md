@@ -2,17 +2,17 @@
 
 ## Introduction
 
-When you use Google Colaboratory in Google Drive the notebook autosaves autosaves every couple minutes. You can always go back to the last 100 autosaves of the notebook. This is probably around 3 hours of when you open up the notebook.
+When you use Google Colaboratory notebooks in Google Drive the it autosaves autosaves every couple minutes. You can always go back to the last 100 autosaves of the notebook. This is probably around 3 hours of when you open up the notebook.
 
 What if you did around 3 hours of work on it, and the notebook crashes or stops working? How to you get your notebook back to the state that you were at yesterday?
 
-If you want to do this, you're better off turning your google drive folder into a local git repository.
-
-How do we use git to keep track of our work that uses Google Drive?
+If you want to do this, you're better off turning your Google Drive folder into a local git repository.
 
 **Why not just use the GitHub integration that Google Colaboratory notebook has?**
 
-What if also a pickle file in the folder as well and you want to push that to GitHub? It's a lot of re-downloading on your computer in order to push it onto GitHub.
+Google Drive is able to save a copy of your notebook to you GitHub repository, but it won't be able to commit other files along with it that might be needed for the file to work. (Such as a data file or commiting a pickle file as well.)
+
+The only way you'd be able to commit both a copy of the notebook and another file in the folder together is to download it onto your computer, then push it. What a hassle.
 
 In this tutorial, we are going to directly interact with git and GitHub through Google Drive.
 
@@ -21,73 +21,87 @@ In this tutorial, we are going to directly interact with git and GitHub through 
 In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
 
 In this tutorial, you are going to be doing the following:
-* Getting a Personal Access Token from GitHub
-* Cloning a public GitHub repository.
-* Cloning a private GitHub repository.
+* Getting a Personal Access Token from GitHub.
+* Cloning a GitHub repository.
 * Initializing a local git repository in GitHub.
 * Pushing local git repository from Google Drive to GitHub.
 
-Generally, Terminal or Command Line needs to be used when cloning GitHub repositories or making a local git repository. In this tutorial, we are going to be opening another Colaboratory notebook within your drive to utilize as your terminal.
+Generally, Terminal or Command Line needs to be used when cloning GitHub repositories or making a local git repository. In this tutorial, we are going to be opening another Colaboratory notebook within your Google Drive to use as your terminal.
 
-**Note**: repository is going to be shorten to repo from now on.
+**Note**: Repository is going to be shorten to repo from now on.
 
 ## Getting a Personal Access Token from GitHub
 
-The first thing is to get a personal access token from Github. Follow the instructions from this [link](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to get one.
-
-Remember to treat this access token like you would treat any password.
-
 Colaboratory notebook's terminal won't prompt for a password when interacting with GitHub repos. Thus a personal access token is neccessary in proving that you have access to the repo through your account.
 
-## Cloning a Public GitHub Repo
+Follow the instructions from this [link](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to get one.
 
-1. You must mount Google Drive to any Colaboratory Notebook if you want to use it as your terminal.
+Remember to treat this access token like you would treat any other password.
+
+## Cloning GitHub Repo
+
+When trying to clone a repo, the terminal or command line will prompt for an username and password. In Colaboratory notebook, the prompt to enter the password won't pop up.
+
+We will be needed go use a personal access token that we got [above](#getting-a-personal-access-token-from-github) for this.
+
+1. Open another colab notebook outside the folder in question. Name the notebook `terminal.ipynb`
+
+2. You must mount Google Drive to any Colaboratory Notebook if you want to use it as your terminal.
 
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
 
-This will prompt you to authorize to mount your google drive. Make sure you do that and enter in your authorization code from the website.
+This will prompt you to authorize to mount your Google Drive. Make sure you do that and enter in your authorization code from the website.
 
 See [this](https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-with-google-drive/) for more details if you're interested.
 
-2. If you want to just clone any Public GitHub Repo, just copy the HTTPS of the repo.
-
-3. In the left hand menu, find the folder where you want the new cloned repo to live in and copy the file path for it. Once you `cd` into this folder, you can clone the repo.
+3. In the Colaboratory notebook, unhide the menu on the left hand side. Find the folder where you want the new cloned repo to live in and copy the file path for it. Once you `cd` into this folder, you can clone the repo.
 
 ```bash
 %cd [path_where_you_want_to_be_at]
-!git clone [github_repo_HTTPS]
 ```
 
-You now have a cloned repo in your Google Drive!
+4. Copy the HTTPS of the GitHub repo.
 
-Note: If you want to push commits to this repo, you will need to clone it the way you do private GitHub repos as you need your password. See the section below.
+On the GitHub repository page look for a green button that says **Clone or download** on the right hand side of the page.
 
-## Cloning Private GitHub Repos
+![Github repo https button](https://help.github.com/assets/images/help/repository/remotes-url.png)
 
-When trying to clone a private repo, the terminal will prompt for an username and password. In Colaboratory notebook, the prompt to enter the password won't pop up.
-
-We will be needed go use a personal access token that we got above for this.
-
-Usually when you're trying to clone a repo, you're able to get the HTTPS for the repository in the following format:
+It should be in the following format:
 
 ```
 https://github.com/[User name]/[repository name].git
 ```
 
-Since the `git clone` function will not prompt for the username and password, the personal access token will need to be inserted into the HTTPS of the github repo.
+5. Edit the Github Repo's HTTPS to include the GitHub personal access token that you gotten [above](#getting-a-personal-access-token-from-github).
+
+It should look like this:
 
 ```
 https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
-Thus the `git clone` command will look like this:
+6. Now clone run the command to clone the GitHub repo.
 
 ```
 git clone https://[github-token]@github.com/[User name]/[repository name].git
 ```
+
+You now have a cloned repo in your Google Drive!
+
+To double check that the the repo has cloned either:
+
+Run the following command in terminal to see if the GitHub repo name pop ups as a folder.
+
+```bash
+!ls
+```
+
+**OR**
+
+Refesh your Google Drive page. Go into the folder that you `cd` into earlier. Check if the the GitHub repo is now listed in the folder.
 
 ## Intializing a Local Git Repo in Google Drive Folder
 
@@ -100,7 +114,7 @@ These are the steps to intializing a Google Drive folder into a git repo.
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-This will prompt you to authorize to mount your google drive. Make sure you do that and enter in your authorization code from the website.
+This will prompt you to authorize to mount your Google Drive. Make sure you do that and enter in your authorization code from the website.
 
 3. Open the left hidden menu within the Colaboratory notebook, open the file path, copy the file path for the folder in question.
 
@@ -127,10 +141,16 @@ You can double check that it's been intialize by the following methods:
 - Go to your folder within your Google Drive, refresh the page & see if there's a `.git` file in it.
 
 5. Do everything else that you need to do in order to commit the file.
+* You'll need to recreate your git config file everytime you restart the terminal.
+
+```bash
+!git config --global user.name [your username]
+!git config --global user.email [your email address]
+```
 
 ## Pushing Local Git Repo to Remote Repo(Github)
 
-1. Create a new repo within GitHub account.
+1. Create a new repo in your GitHub account.
 
 2. Copy the HTTPS of your GitHub repo & add your GitHub personal access token into it.
 
@@ -152,11 +172,27 @@ Double check that the remote is added with the following.
 
 `-v` means to output more information regarding the remote.
 
-4. Push your local repo into your github repo.
+
+5. Push your local repo into your github repo.
 
 ```bash
 !git push -u [remote alias] [master]
 ```
+
+## Recap
+
+In order to clone a Github repo into Google Drive or push a local git repo from Google Drive, you need the following:
+* A Colaboratory notebook with the Google Drive mounted
+* Personal access token from your GitHub account
+* GitHub repo HTTPS
+
+The GitHub repo needs to be refigured in the following format:
+```
+https://[github-token]@github.com/[User name]/[repository name].git
+```
+
+From there, you can either use it to `git clone` a repository or add it in as a `git remote`.
+
 
 ## References
 
