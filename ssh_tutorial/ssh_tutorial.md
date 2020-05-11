@@ -5,6 +5,7 @@ When you're trying to clone a GitHub repository into your you see that there's 2
 1. Clone with HTTPS
 
 ![github_http_image](github_http_image.png)
+
 These are available on all public and private Github reposoitories. This is probably what you've used before when you've clone a repository from Github.
 
 When you use this method, the remote that's saved in your local git repository is in the following format. I'm using this current Github repository as an example.
