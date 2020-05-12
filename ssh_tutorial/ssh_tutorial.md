@@ -49,6 +49,31 @@ The private SSH key will be added to the ssh-agent on your local computer. The p
 
 ## How to use it with Github?
 
+If you want to utilize SSH with Github you'll need to setup a couple things.
+
+Your computer will be the SSH client. Github will be the SSHD server of where you're trying toThis is where you'll be creating the private and public SSH keys.
+
+>**Should I create a new key if I already have one on my computer already?**
+> 
+> Are you already using this key? If so, create a new one! It is better to create a new SSH for every computer or thing you're trying to SSH into.
+
+### Creating Public and Private SSH Keys
+
+Open up command line on your computer. You'll need to use `ssh-keygen` to create your SSH Keys.
+
+```bash
+ssh-keygen -t rsa -b 4096
+```
+`-t rsa` - This specify the type of key you want to create. In this case  it's a `rsa` type. This is the default type of SSH key created.
+
+`-b 4096` - This means that the key created is 4096 bits. This is what is recommended by [Github](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). If this is not specified, the default will be 2048 bit.s
+
+Next you'll be prompted to for where to save the key. I'd recommend keeping the folder that it recommends, but change the name of the key from `id_rsa` to `id_rsa_github`. This way you know exactly what this is used for.
+
+You'll be prompted next to enter in a passphrase. This is for if someone can get into your computer, if they want to SSH into somewhere else, they still need the passphrase in order to use the SSH key.
+
+### 
+
 ##References
 * https://help.github.com/en/github/using-git/which-remote-url-should-i-use
 * https://help.github.com/en/github/authenticating-to-github/about-ssh
