@@ -72,9 +72,25 @@ Next you'll be prompted to for where to save the key. I'd recommend keeping the 
 
 You'll be prompted next to enter in a passphrase. This is for if someone can get into your computer, if they want to SSH into somewhere else, they still need the passphrase in order to use the SSH key.
 
-### 
+The private key will be `id_rsa_github`.
+The public key will be `id_rsa_github.pub`.
 
-##References
+### Adding Private SSH Key to `ssh-agent`
+
+Congratulations you've now created the SSH keys! Now what?
+
+Well you'll still need something to interface between you and the computer or thing you're supposed to be ssh-ing into. This is where `ssh-agent` comes in. The ssh-agent helps you manage all your differen keys. 
+
+You'll need to add the private key to the ssh-agent. For more information on this click [here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent). 
+
+The gist of it is the following command in command line:
+```bash
+ssh-add <ssh key folder path>/id_rsa_github
+```
+**Note:** Remember to add the **private key** here and not the public key.
+
+### Add Public SSH Key to GitHub account
+## References
 * https://help.github.com/en/github/using-git/which-remote-url-should-i-use
 * https://help.github.com/en/github/authenticating-to-github/about-ssh
 * https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
