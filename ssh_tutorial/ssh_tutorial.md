@@ -40,9 +40,17 @@ This is because GitHub already knows that who you are because of the SSH key reg
 
 ## What is SSH?
 
+SSH is a communication protocol standing for Secure Shell. It is a way that lets you do anything on a remote computer. The traffic travelling back and forth is encrypted. It is most oftenly used in terminal or command line.
+
+When you're using SSH, you'll in an SSH client for you to remote into another computer. The computer you're trying to remote into needs to have a SSHD running on it. SSHD is an OpenSSH server that listens to incomming conenctions using SSH protocols and acts as server for the protcol.
+
+On the SSH client, a ssh private and public key is created.
+The private SSH key will be added to the ssh-agent on your local computer. The public key is added to SSHD server of where you want to SSH into.
+
 ## How to use it with Github?
 
 ##References
 * https://help.github.com/en/github/using-git/which-remote-url-should-i-use
-* 
+* https://help.github.com/en/github/authenticating-to-github/about-ssh
+* https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
