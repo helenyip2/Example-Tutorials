@@ -90,8 +90,27 @@ ssh-add <ssh key folder path>/id_rsa_github
 **Note:** Remember to add the **private key** here and not the public key.
 
 ### Add Public SSH Key to GitHub account
+
+In your browser go onto your Github account and go into your **Settings**.
+
+In your setting selection the **SSH & GPG Keys**.
+
+Click add a new SSH key.
+
+On your computer open up your `id_rsa_github.pub` file and copy and paste that into GitHub.
+
+**Note:** Remember to use your **public key** `id_rsa_github.pub` file and not the private one!
+
+Now you're ready to use SSH to access Github!
+
+## How is this different if I was using this to SSH into another computer.
+
+If you were using this to SSH into another computer, you would add the public key to the `authorized_key` file onto the SSHD server computer. Watch [this](https://youtu.be/hQWRp-FdTpc?t=2040) for more information. 
+
+
 ## References
 * https://help.github.com/en/github/using-git/which-remote-url-should-i-use
 * https://help.github.com/en/github/authenticating-to-github/about-ssh
 * https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+* https://youtu.be/hQWRp-FdTpc
 
