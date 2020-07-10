@@ -21,10 +21,10 @@ In this tutorial, we are going to directly interact with git and GitHub through 
 In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
 
 In this tutorial, you are going to be doing the following:
-* [Getting a Personal Access Token from GitHub](##getting-a-personal-access-token-from-github)
-* Cloning a GitHub repository.
-* Initializing a local git repository in GitHub.
-* Pushing local git repository from Google Drive to GitHub.
+* [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)
+* [Cloning a GitHub repository](#cloning-github-repo)
+* [Initializing a local git repository in Google Drive Folder](#intializing-a-local-git-repo-in-google-drive-folder)
+* [Pushing local git repository from Google Drive to Remote Repository on GitHub](#pushing-local-git-repo-to-remote-repogithub)
 
 Generally, Terminal or Command Line needs to be used when cloning GitHub repositories or making a local git repository. In this tutorial, we are going to be opening another Colaboratory notebook within your Google Drive to use as your terminal.
 
