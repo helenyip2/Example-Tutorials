@@ -21,7 +21,7 @@ In this tutorial, we are going to directly interact with git and GitHub through 
 In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
 
 In this tutorial, you are going to be doing the following:
-* Getting a Personal Access Token from GitHub.
+* [Getting a Personal Access Token from GitHub](##getting-a-personal-access-token-from-github)
 * Cloning a GitHub repository.
 * Initializing a local git repository in GitHub.
 * Pushing local git repository from Google Drive to GitHub.
@@ -34,7 +34,7 @@ Generally, Terminal or Command Line needs to be used when cloning GitHub reposit
 
 Colaboratory notebook's terminal won't prompt for a password when interacting with GitHub repos. Thus a personal access token is neccessary in proving that you have access to the repo through your account.
 
-Follow the instructions from this [link](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to get one.
+Follow the instructions from this [link](https://docs.github.com/assets/images/help/repository/https-url-clone.png) to get one.
 
 Remember to treat this access token like you would treat any other password.
 
@@ -197,3 +197,4 @@ From there, you can either use it to `git clone` a repository or add it in as a 
 ## References
 
 [Link](https://zerowithdot.com/colab-github-workflow/)
+[Github Cloning Repo Tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
