@@ -1,6 +1,6 @@
 # How to use SSH with Github
 
-The goal of this is to show you how to set up your computer and github account so you can use SSH to access Github.
+The goal of this is to show you how to set up your computer and GitHub account so you can use SSH to access Github. This tutorial is written for Linux.
 
 * [Introduction](#introduction)
 * [What is SSH?](#what-is-ssh)
@@ -13,16 +13,16 @@ The goal of this is to show you how to set up your computer and github account s
 
 ## Intoduction
 
-When you're trying to clone a GitHub repository into your you see that there's 2 different options when you click on the on the green Clone or download button.
+When you're trying to clone a GitHub repository into your you see that there's 2 different options when you click on the on the green **Code** button.
 
 **1. Clone with HTTPS**
 
 
-![github_http_image](github_http_image.png)
+![github_http_image](images/github_http_image.png)
 
 These are available on all public and private Github reposoitories. This is probably what you've used before when you've clone a repository from Github.
 
-When you use this method, the remote that's saved in your local git repository will be in the following format. I'm using this current Github repository as an example.
+When you use this method, the remote that's saved in your local git repository will be in the following format. (I'm using this current Github repository as an example.)
 ```
 https://github.com/helenyip2/Example-Tutorials.git
 ```
@@ -36,11 +36,11 @@ Every time you use the commands listed below in command line, you'll be prompted
 
 **2. Clone with SSH**
 
-![github_http_image](github_ssh_image.png)
+![github_http_image](images/github_ssh_image.png)
 
-When you're using the SSH URL you'll be GitHub via SSH. In order to do this, you'll need to have a SSH key registered with your GitHub account. We will go into this later.
+When you're using the SSH URL you'll be connecting to GitHub via SSH. In order to do this, you'll need to have a SSH key registered with your GitHub account. We will go into this later.
 
-When you use this method, the Git remote that's saved in your local git repository will be in the following format. I'm using this currently Github repository as an example.
+When you use this method, the git remote that's saved in your local git repository will be in the following format. I'm using this currently Github repository as an example.
 ```
 git@github.com:helenyip2/Example-Tutorials.git
 ```
@@ -55,18 +55,17 @@ This is because GitHub already knows that who you are because of the SSH key reg
 
 ## What is SSH?
 
-SSH is a communication protocol standing for Secure Shell. It is a way that lets you do anything on a remote computer. The traffic travelling back and forth is encrypted. It is most oftenly used in terminal or command line.
+SSH is a communication protocol standing for Secure Shell. It is a way that lets you do anything on a remote computer. The traffic travelling back and forth between your local computer and the remote computer is encrypted. It is most oftenly used in terminal or command line. In the case of this tutorial, your computer/laptop is your local computer and GitHub is the remote computer that you're trying to access.
 
-When you're using SSH, you'll in an SSH client for you to remote into another computer. The computer you're trying to remote into needs to have a SSHD running on it. SSHD is an OpenSSH server that listens to incomming conenctions using SSH protocols and acts as server for the protcol.
+When you're using SSH, you'll need an SSH client on your local computer to remote into another computer (GitHub). The computer you're trying to remote into needs to have a SSHD running on it. SSHD is an OpenSSH server that listens to incoming conenctions using SSH protocols and acts as server for the protcol.
 
-On the SSH client, a ssh private and public key is created.
-The private SSH key will be added to the ssh-agent on your local computer. The public key is added to SSHD server of where you want to SSH into.
+Using the SSH client on your computer, you'll need to create pair of SSH keys that will have a private and public key. The private SSH key will be added to the ssh-agent on your local computer. The public key is added to SSHD server (GitHub) of where you want to SSH into.
 
 ## How to use SSH with Github?
 
 If you want to utilize SSH with Github you'll need to setup a couple things.
 
-Your computer will be the SSH client. Github will be the SSHD server of where you're trying toThis is where you'll be creating the private and public SSH keys.
+Your computer will be the SSH client. Github will be the SSHD server of where you're trying to remote access. into. This is where you'll be creating the private and public SSH keys.
 
 >**Should I create a new key if I already have one on my computer already?**
 > 
@@ -81,7 +80,7 @@ ssh-keygen -t rsa -b 4096
 ```
 `-t rsa` - This specify the type of key you want to create. In this case  it's a `rsa` type. This is the default type of SSH key created.
 
-`-b 4096` - This means that the key created is 4096 bits. This is what is recommended by [Github](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). If this is not specified, the default will be 2048 bit.s
+`-b 4096` - This means that the key created is 4096 bits. This is what is recommended by [Github](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). If this is not specified, the default will be 2048 bits.
 
 Next you'll be prompted to for where to save the key. I'd recommend keeping the folder that it recommends, but change the name of the key from `id_rsa` to `id_rsa_github`. This way you know exactly what this is used for.
 
@@ -94,7 +93,7 @@ The public key will be `id_rsa_github.pub`.
 ---
 Congratulations you've now created the SSH keys! Now what?
 
-Well you'll still need something to interface between you and the computer or thing you're supposed to be ssh-ing into. This is where `ssh-agent` comes in. The ssh-agent helps you manage all your differen keys. 
+Well you'll still need something to interface between you and the computer (GitHub) which you're trying to SSH into. This is where `ssh-agent` comes in. The ssh-agent helps you manage all your different SSH keys. 
 
 You'll need to add the private key to the ssh-agent. For more information on this click [here](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent). 
 
@@ -102,21 +101,27 @@ The gist of it is the following command in command line:
 ```bash
 ssh-add <ssh key folder path>/id_rsa_github
 ```
-**Note:** Remember to add the **private key** here and not the public key.
+**Note:** Remember to add the **private key** here (The file without the `.pub` extension) and not the public key.
 
 ### Add Public SSH Key to GitHub account
 ---
 In your browser go onto your Github account and go into your **Settings**.
 
+![github setting image](images/github_settings_image.png)
+
 In your setting selection the **SSH & GPG Keys**.
 
+![ssh & gpg key image](images/github_ssh_gpg_keys_image.png)
+
 Click add a new SSH key.
+
+![add ssh key image](images/github_add_ssh_key_image.png)
 
 On your computer open up your `id_rsa_github.pub` file and copy and paste that into GitHub.
 
 **Note:** Remember to use your **public key** `id_rsa_github.pub` file and not the private one!
 
-Now you're ready to use SSH to access Github!
+Now you're ready to use SSH to access GitHub!
 
 ## SSH into another computer?
 
