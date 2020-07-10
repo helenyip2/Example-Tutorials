@@ -18,7 +18,7 @@ In this tutorial, we are going to directly interact with git and GitHub through 
 
 ## Goal
 
-In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal function within a Colaboratory notebook.
+In order to follow along with the instructions, you'll need some basic git command line knowledge & how to use the terminal functions within a Colaboratory notebook.
 
 In this tutorial, you are going to be doing the following:
 * [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)
@@ -32,7 +32,7 @@ Generally, Terminal or Command Line needs to be used when cloning GitHub reposit
 
 ## Getting a Personal Access Token from GitHub
 
-Colaboratory notebook's terminal won't prompt for a password when interacting with GitHub repos. Thus a personal access token is neccessary in proving that you have access to the repo through your account.
+When using Colaboratory notebook as the terminal, it won't prompt you for a password when you're interacting with with GitHub repos. Thus a personal access token is neccessary in proving that you have access to the repo through your account.
 
 Follow the instructions from this [link](https://docs.github.com/assets/images/help/repository/https-url-clone.png) to get one.
 
@@ -40,13 +40,15 @@ Remember to treat this access token like you would treat any other password.
 
 ## Cloning GitHub Repo
 
-When trying to clone a repo, the terminal or command line will prompt for an username and password. In Colaboratory notebook, the prompt to enter the password won't pop up.
+As mention before in the previous section, the prompt to enter the password won't pop up when using Colaboratory Notebooks as the terminal to interact with GitHub. You won't need this if you you have access to clone the repo from GitHub, but you'll need use either the password or the personal access token when pushing commits to the Github repo.
 
 We will be needed go use a personal access token that we got [above](#getting-a-personal-access-token-from-github) for this.
 
-1. Open another colab notebook outside the folder in question. Name the notebook `terminal.ipynb`
+1. Open another colab notebook outside the folder in question. Name the notebook `terminal.ipynb`.
 
-2. You must mount Google Drive to any Colaboratory Notebook if you want to use it as your terminal.
+**Note:** I'd advising to keep the notebook outside the folder in question, so you don't accidently upload it with your personal access token in it. Another method is to start your notebook inside the folder in question and add `terminal.ipynb` to the `.gitignore` file.
+
+2. You must mount Google Drive to any Colaboratory Notebook if you want to use it as your terminal in `terminal.ipynb`.
 
 ```python
 from google.colab import drive
@@ -90,6 +92,7 @@ git clone https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
 You now have a cloned repo in your Google Drive!
+---
 
 To double check that the the repo has cloned either:
 
@@ -138,10 +141,11 @@ You can double check that it's been intialize by the following methods:
 
 **OR**
 
-- Go to your folder within your Google Drive, refresh the page & see if there's a `.git` file in it.
+- Go to your folder within your Google Drive, refresh the page & see if there's a `.git` folder in it.
 
 5. Do everything else that you need to do in order to commit the file.
-* You'll need to recreate your git config file everytime you restart the terminal.
+
+**Note:** You'll need to recreate your git config file everytime you restart the terminal.
 
 ```bash
 !git config --global user.name [your username]
@@ -176,7 +180,7 @@ Double check that the remote is added with the following.
 5. Push your local repo into your github repo.
 
 ```bash
-!git push -u [remote alias] [master]
+!git push -u [remote alias] [branch you want to push to on Github]
 ```
 
 ## Recap
@@ -191,10 +195,10 @@ The GitHub repo needs to be refigured in the following format:
 https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
-From there, you can either use it to `git clone` a repository or add it in as a `git remote`.
+From there, you can either use it to `git clone` a Github repository or use `git remote` to link it to a Github repository.
 
 
 ## References
 
-[Link](https://zerowithdot.com/colab-github-workflow/)
-[Github Cloning Repo Tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+* [Link](https://zerowithdot.com/colab-github-workflow/)
+* [Github Cloning Repo Tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
