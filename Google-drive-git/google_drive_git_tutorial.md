@@ -92,6 +92,7 @@ git clone https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
 You now have a cloned repo in your Google Drive!
+
 ---
 
 To double check that the the repo has cloned either:
