@@ -28,6 +28,18 @@ Generally, Terminal or Command Line is used when cloning GitHub repositories or 
 
 **Note**: Repository is going to be shorten to repo from now on.
 
+The path you'll follow in this tutorial will depend on the question:
+
+**Are you accessing an exisitng GitHub Repo?**
+
+| **Yes** | **No** |
+|---------|--------|
+| 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)
+ 2. [Cloning a GitHub repository](#cloning-github-repo) | 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github) 
+ 2. [Initializing a local git repository in Google Drive Folder](#intializing-a-local-git-repo-in-google-drive-folder) 
+ 3. [Pushing local git repository from Google Drive to Remote Repository on GitHub](#pushing-local-git-repo-to-remote-repogithub) |
+
+
 ## Getting a Personal Access Token from GitHub
 
 It won't prompt for GitHub account's password when using Colaboratory notebook as the terminal. A personal access token is necessary to prove your account has access to the a repo.
@@ -35,6 +47,12 @@ It won't prompt for GitHub account's password when using Colaboratory notebook a
 Follow the instructions from this [link](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to get one.
 
 **Note**: Remember to treat this access token like you would treat any other password.
+
+
+**Are you accessing an exiting GitHub Repo?**
+
+| [Yes]((#cloning-github-repo)) | [No](#intializing-a-local-git-repo-in-google-drive-folder) |
+|-----|----|
 
 ## Cloning GitHub Repo
 
@@ -62,7 +80,7 @@ See [this](https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-w
 Once you `cd` into this folder, you can clone the repo.
 
 ```bash
-%cd [paste folder path that you copied here]
+%cd <paste folder path that you copied here>
 ```
 Double check that you are in the folder that you want to clone the repo into by using the following command.
 
@@ -79,7 +97,7 @@ On the GitHub repository page look for a green button that says **Clone or downl
 It should be in the following format:
 
 ```
-https://github.com/[User name]/[repository name].git
+https://github.com/<User name>/<repository name>.git
 ```
 
 5. Edit the Github Repo's HTTPS to include the personal access token that you gotten [above](#getting-a-personal-access-token-from-github).
@@ -87,16 +105,22 @@ https://github.com/[User name]/[repository name].git
 It should look like this:
 
 ```
-https://[github-token]@github.com/[User name]/[repository name].git
+https://<github-token>@github.com/<User name>/<repository name>.git
 ```
+
+**Note**: This is important in setting up your git remote in this git repo properly.
 
 6. Now clone run the command to clone the GitHub repo.
 
 ```
-git clone https://[github-token]@github.com/[User name]/[repository name].git
+git clone https://<github-token>@github.com/<User name>/<repository name>.git
 ```
 
 You now have a cloned repo in your Google Drive!
+
+The remote repo will be saved under the git remote `origin`. You'll be able push commits the same way you have been doing in command line.
+
+[Skip to the Recap](#recap)
 
 ---
 
