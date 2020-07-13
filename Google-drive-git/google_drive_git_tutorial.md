@@ -34,10 +34,7 @@ The path you'll follow in this tutorial will depend on the question:
 
 | **Yes** | **No** |
 |---------|--------|
-| 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)
- 2. [Cloning a GitHub repository](#cloning-github-repo) | 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github) 
- 2. [Initializing a local git repository in Google Drive Folder](#intializing-a-local-git-repo-in-google-drive-folder) 
- 3. [Pushing local git repository from Google Drive to Remote Repository on GitHub](#pushing-local-git-repo-to-remote-repogithub) |
+| 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)<br> 2. [Cloning a GitHub repository](#cloning-github-repo) | 1. [Getting a Personal Access Token from GitHub](#getting-a-personal-access-token-from-github)<br>2. [Initializing a local git repository in Google Drive Folder](#intializing-a-local-git-repo-in-google-drive-folder)<br>3. [Pushing local git repository from Google Drive to Remote Repository on GitHub](#pushing-local-git-repo-to-remote-repogithub) |
 
 
 ## Getting a Personal Access Token from GitHub
