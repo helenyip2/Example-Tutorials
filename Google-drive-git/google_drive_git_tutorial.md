@@ -48,7 +48,7 @@ Follow the instructions from this [link](https://docs.github.com/en/github/authe
 
 **Are you accessing an exiting GitHub Repo?**
 
-| [Yes]((#cloning-github-repo)) | [No](#intializing-a-local-git-repo-in-google-drive-folder) |
+| [Yes](#cloning-github-repo) | [No](#intializing-a-local-git-repo-in-google-drive-folder) |
 |-----|----|
 
 ## Cloning GitHub Repo
