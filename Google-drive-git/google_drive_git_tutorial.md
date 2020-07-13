@@ -117,8 +117,6 @@ You now have a cloned repo in your Google Drive!
 
 The remote repo will be saved under the git remote `origin`. You'll be able push commits the same way you have been doing in command line.
 
-[Skip to the Recap](#recap)
-
 ---
 
 >To double check that the the repo has cloned either:
@@ -135,6 +133,8 @@ The remote repo will be saved under the git remote `origin`. You'll be able push
 > **OR**
 > 
 > Refresh your Google Drive page. Go into the folder that you `cd` into earlier. Check if the the GitHub repo is now listed in the folder.
+
+[Skip to the Recap](#recap)
 
 ## Intializing a Local Git Repo in Google Drive Folder
 
