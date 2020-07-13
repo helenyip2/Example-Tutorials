@@ -32,7 +32,7 @@ Generally, Terminal or Command Line is used when cloning GitHub repositories or 
 
 It won't prompt for GitHub account's password when using Colaboratory notebook as the terminal. A personal access token is necessary to prove your account has access to the a repo.
 
-Follow the instructions from this [link](https://docs.github.com/assets/images/help/repository/https-url-clone.png) to get one.
+Follow the instructions from this [link](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to get one.
 
 **Note**: Remember to treat this access token like you would treat any other password.
 
