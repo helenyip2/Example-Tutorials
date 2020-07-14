@@ -87,9 +87,9 @@ pwd
 
 4. Copy the HTTPS of the GitHub repo.
 
-On the GitHub repository page look for a green button that says **Clone or download** on the right hand side of the page.
+On the GitHub repository page look for a green button that says **Code** on the right hand side of the page.(I'm using this repo as a reference.)
 
-![GitHub repo https button](https://help.github.com/assets/images/help/repository/remotes-url.png)
+![GitHub repo https button](image/github_http_image)
 
 It should be in the following format:
 
