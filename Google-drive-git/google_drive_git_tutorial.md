@@ -89,7 +89,7 @@ pwd
 
 On the GitHub repository page look for a green button that says **Code** on the right hand side of the page.(I'm using this repo as a reference.)
 
-![GitHub repo https button](image/github_http_image)
+![GitHub repo https button](image/github_http_image.png)
 
 It should be in the following format:
 
