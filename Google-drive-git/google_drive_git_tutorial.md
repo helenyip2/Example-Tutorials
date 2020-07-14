@@ -30,7 +30,7 @@ Generally, Terminal or Command Line is used when cloning GitHub repositories or 
 
 The path you'll follow in this tutorial will depend on the question:
 
-**Are you accessing an exisitng GitHub Repo?**
+**Are you accessing an existing GitHub Repo?**
 
 | **Yes** | **No** |
 |---------|--------|
@@ -53,7 +53,7 @@ Follow the instructions from this [link](https://docs.github.com/en/github/authe
 
 ## Cloning GitHub Repo
 
-As mention before, the prompt to enter the password won't pop up when using Colaboratory Notebooks to interact with GitHub. The personal access token is needed when pushing commits to the Github repo.
+As mention before, the prompt to enter the password won't pop up when using Colaboratory Notebooks to interact with GitHub. The personal access token is needed when pushing commits to the GitHub repo.
 
 The personal access token that we got [above](#getting-a-personal-access-token-from-github) will be used.
 
@@ -89,7 +89,7 @@ pwd
 
 On the GitHub repository page look for a green button that says **Clone or download** on the right hand side of the page.
 
-![Github repo https button](https://help.github.com/assets/images/help/repository/remotes-url.png)
+![GitHub repo https button](https://help.github.com/assets/images/help/repository/remotes-url.png)
 
 It should be in the following format:
 
@@ -97,7 +97,7 @@ It should be in the following format:
 https://github.com/<User name>/<repository name>.git
 ```
 
-5. Edit the Github Repo's HTTPS to include the personal access token that you gotten [above](#getting-a-personal-access-token-from-github).
+5. Edit the GitHub Repo's HTTPS to include the personal access token that you gotten [above](#getting-a-personal-access-token-from-github).
 
 It should look like this:
 
@@ -138,7 +138,7 @@ The remote repo will be saved under the git remote `origin`. You'll be able push
 
 ## Intializing a Local Git Repo in Google Drive Folder
 
-These are the steps to initializing a Google Drive folder into a local git repo.
+If you have a Google Drive folder with all youre notebooks and files in it already and you want to upload it to GitHub, this is what you follow. These are the steps to initializing a Google Drive folder into a local git repo.
 
 1. Open another Colaboratory notebook outside the folder you want to make into a local git repo. Name the notebook `terminal.ipynb`
 
@@ -158,7 +158,7 @@ This will prompt you to authorize to mount your Google Drive. Make sure you do t
 In another cell, put in the following function.
 
 ```bash
-%cd [paste in file path here. Put in quotes if there are spaces in it.]
+%cd <"paste in file path here./ Put in quotes if there are spaces in it.">
 ```
 
 Double check that you're in the right repository using `pwd`.
@@ -199,7 +199,7 @@ Re-run `!git init`.
 ```
 Now you're read to make make git commits within the folder!
 
-## Pushing Local Git Repo to Remote Repo(Github)
+## Pushing Local Git Repo to Remote Repo(GitHub)
 
 1. Create a new repo in your GitHub account.
 
@@ -234,14 +234,14 @@ The output of this should be:
 5. Push your local repo into your github repo.
 
 ```bash
-!git push -u [ alias] [branch you want to push to on Github]
+!git push -u [ alias] [branch you want to push to on GitHub]
 ```
 
 Tada! You're good to go!
 
 ## Recap
 
-In order to clone a Github repo into Google Drive or push a local git repo from Google Drive, you need the following:
+In order to clone a GitHub repo into Google Drive or push a local git repo from Google Drive, you need the following:
 * A Colaboratory notebook with the Google Drive mounted
 * Personal access token from your GitHub account
 * GitHub repo HTTPS
@@ -251,10 +251,10 @@ The GitHub repo needs to be refigured in the following format:
 https://[github-token]@github.com/[User name]/[repository name].git
 ```
 
-From there, you can either use it to `git clone` a Github repository or use `git remote` to link it to a Github repository.
+From there, you can either use it to `git clone` a GitHub repository or use `git remote` to link it to a GitHub repository.
 
 
 ## References
 
 * [Link](https://zerowithdot.com/colab-github-workflow/)
-* [Github Cloning Repo Tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+* [GitHub Cloning Repo Tutorial](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
